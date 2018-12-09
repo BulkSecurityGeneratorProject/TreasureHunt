@@ -1,0 +1,39 @@
+{
+    "name": "Location",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "LocationType",
+            "fieldValues": "INSIDE,OUTSIDE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "challenge",
+            "otherEntityName": "challenge",
+            "otherEntityRelationshipName": "location"
+        }
+    ],
+    "changelogDate": "20181209082731",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "location",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
