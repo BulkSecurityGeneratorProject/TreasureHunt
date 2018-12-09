@@ -9,7 +9,6 @@ enum ChallengeType {
 
 entity Challenge {
 	challenge String required,
-    location Location required,
     solution String required
     type ChallengeType required,
     difficulty DifficultyType required
@@ -27,6 +26,11 @@ entity Location {
 
 entity Hunt {
 	name String required
+}
+
+
+relationship ManyToOne {
+	Challenge to Location 
 }
 
 relationship OneToMany {

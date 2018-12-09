@@ -1,0 +1,30 @@
+{
+    "name": "Hunt",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "challenge",
+            "otherEntityName": "challenge",
+            "otherEntityRelationshipName": "hunt"
+        }
+    ],
+    "changelogDate": "20181209082732",
+    "entityTableName": "hunt",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
