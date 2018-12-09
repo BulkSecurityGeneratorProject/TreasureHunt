@@ -1,0 +1,44 @@
+
+enum DifficultyType {
+	EASY, COMPLEX
+}
+
+enum ChallengeType {
+	RIDDLE
+}
+
+entity Challenge {
+	challenge String required,
+    location Location required,
+    solution String required
+    type ChallengeType required,
+    difficulty DifficultyType required
+}
+
+enum LocationType {
+	INSIDE, OUTSIDE
+}
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	type LocationType required,
+    location String required
+}
+
+entity Hunt {
+	name String required
+}
+
+relationship OneToMany {
+	Hunt{Challenge} to Challenge
+}
+
+paginate Challenge with pagination
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix
