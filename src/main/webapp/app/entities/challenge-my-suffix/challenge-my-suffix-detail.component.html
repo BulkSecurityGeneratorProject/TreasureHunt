@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="challenge">
+            <h2><span>Challenge</span> {{challenge.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Challenge</span></dt>
+                <dd>
+                    <span>{{challenge.challenge}}</span>
+                </dd>
+                <dt><span>Solution</span></dt>
+                <dd>
+                    <span>{{challenge.solution}}</span>
+                </dd>
+                <dt><span>Type</span></dt>
+                <dd>
+                    <span>{{challenge.type}}</span>
+                </dd>
+                <dt><span>Difficulty</span></dt>
+                <dd>
+                    <span>{{challenge.difficulty}}</span>
+                </dd>
+                <dt><span>Location</span></dt>
+                <dd>
+                    <div *ngIf="challenge.locationId">
+                        <a [routerLink]="['/location-my-suffix', challenge.locationId, 'view']">{{challenge.locationId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Hunt</span></dt>
+                <dd>
+                    <div *ngIf="challenge.huntId">
+                        <a [routerLink]="['/hunt-my-suffix', challenge.huntId, 'view']">{{challenge.huntId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/challenge-my-suffix', challenge.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
